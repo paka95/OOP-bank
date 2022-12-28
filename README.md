@@ -14,6 +14,7 @@ There is a basic value and input validation. User is prompted to reenter new val
 ```
 Clone the repository
 Then edit the lines in customer.py and account.py files, so that it can connect with your database (use your database data)
+Install MySQL connector using "pip install mysql-connector-python" command (mysql-connector-python==8.0.31 used in this project)
 Start the program with "python main.py" command
 ```
 
