@@ -4,10 +4,10 @@ import mysql.connector
 class Account:
     def __init__(self):
         self.cnx = mysql.connector.connect(
-            host="localhost", 
-            user="root", 
-            password="paka",
-            database="bank"
+            host="",        # db host
+            user="",        # db username
+            password="",    # db password
+            database=""     # db name
             )
         self.cursor = self.cnx.cursor()
         
