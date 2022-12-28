@@ -3,10 +3,10 @@ import mysql.connector
 class Customer:
     def __init__(self):
         self.cnx = mysql.connector.connect(
-        host="",   #db host
-        user="",        # db username
-        password="",    # db password
-        database=""     # db name
+            host="",        # db host
+            user="",        # db username
+            password="",    # db password
+            database=""     # db name
         )
         self.cursor = self.cnx.cursor()
 
@@ -56,7 +56,12 @@ class Customer:
 
 
     def depositMoney(self, acc_num):
-        amountToDeposit = float(input("Please enter the amount you wish to deposit: "))
+        while True:
+            amountToDeposit = float(input("Please enter the amount you wish to deposit: "))
+            if amountToDeposit < 0:
+                print("Amount can't be negative. Please try again")
+                continue
+            break
         sql = """SELECT account_balance FROM Account WHERE account_number = %s"""
         val = (acc_num,)
         self.cursor.execute(sql, val)
